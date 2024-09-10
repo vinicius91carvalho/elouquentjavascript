@@ -1,0 +1,9 @@
+services:
+  rust:
+    container_name: elouquentjavascript
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app
+    command: tail -f /dev/null
