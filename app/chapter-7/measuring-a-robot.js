@@ -6,14 +6,14 @@
  */
 const { routeRobot, goalOrientedRobot, VillageState, runRobot } = require('./robot');
 
-function compareRobots(robot1, memory1, robot2, memory2) {
+function compareRobots({ robot1, memory1, robot1Name }, { robot2, memory2, robot2Name }) {
     let robots = [{
-        name: 'routeRobot',
+        name: robot1Name || 'routeRobot',
         robot: robot1,
         memory: memory1,
         turns: []
     }, {
-        name: 'goalOrientedRobot',
+        name: robot2Name || 'goalOrientedRobot',
         robot: robot2,
         memory: memory2,
         turns: []
@@ -35,4 +35,6 @@ function compareRobots(robot1, memory1, robot2, memory2) {
     })).forEach(robot => console.log(`$ ${robot.robotsName} took ${robot.avarageSteps} steps`))
 }
 
-compareRobots(routeRobot, [], goalOrientedRobot, []);
+module.exports = { compareRobots };
+
+// compareRobots(routeRobot, [], goalOrientedRobot, []);

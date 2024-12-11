@@ -135,4 +135,4 @@ function runRobot(state, robot, memory) {
 
 // runRobot(VillageState.random(), goalOrientedRobot, []);
 
-module.exports = { routeRobot, goalOrientedRobot, runRobot, VillageState };
+module.exports = { routeRobot, findRoute, roadGraph, goalOrientedRobot, runRobot, VillageState };
